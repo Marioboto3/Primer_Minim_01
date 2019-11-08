@@ -1,0 +1,12 @@
+# Project exclude paths
+/controllers/testScripts.js
+/node_modules/
+/routes/test.js
+/app.js
+# Project exclude paths
+/controllers/studentScripts.js
+/controllers/subjectScripts.js
+/models/Student.js
+/models/Subject.js
+/routes/studentRoutes.js
+/routes/subjectRoutes.js
