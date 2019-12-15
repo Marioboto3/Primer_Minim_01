@@ -5,6 +5,7 @@ let subjectScripts = require('../controllers/subjectScripts');
 
 router.get('/get', subjectScripts.getAllSubjects);
 router.get('/get/:id', subjectScripts.getSubjectById);
+router.get('/get/students/:id', subjectScripts.getStudentsOfSubject);
 router.post('/add', subjectScripts.addSubject);
 router.post('/addNew', subjectScripts.addStudentToSubject);
 

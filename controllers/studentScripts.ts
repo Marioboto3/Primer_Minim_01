@@ -12,6 +12,7 @@ exports.addStudent = async function (req, res){
     console.log("Req: ",req.body);
     let student = req.body;
     let newStudent = new Student(student);
+    console.log('stu: ', newStudent);
     let result = await newStudent.save();
     if(result){
         res.status(200).send(result);

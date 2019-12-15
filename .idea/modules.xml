@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../IonicMinimo2/.idea/IonicMinimo2.iml" filepath="$PROJECT_DIR$/../IonicMinimo2/.idea/IonicMinimo2.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Primer_Minim_01.iml" filepath="$PROJECT_DIR$/.idea/Primer_Minim_01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../minimo2/.idea/minimo2.iml" filepath="$PROJECT_DIR$/../minimo2/.idea/minimo2.iml" />
     </modules>
   </component>
 </project>

@@ -38,14 +38,38 @@ exports.addStudentToSubject = async function (req, res){
 
 
 };
-
+exports.getStudentsOfSubject = async function (req, res){
+    let s = req.params.id;
+    let subject = await Subject.findOne({_id:s});
+    let st = await Student.find({}, {name:1});
+    let students = await Subject.findOne({ _id:s },{ _id:0, students:1 }).populate('students', '', null, { sort: { 'modificationDate': -1 } });
+    let decimal: number = 0;
+    if(subject) {
+        students.students.forEach(x => {
+            st.forEach(a => {
+                console.log('a', a._id);
+                if (x.name == a.name) {
+                    st.splice(decimal, 1);
+                    console.log('st2:', st);
+                    decimal++;
+                } else {
+                    console.log('porque no entras');
+                    decimal++;
+                }
+            });
+            decimal = 0;
+        });
+        res.status(200).send({subject: subject, st});
+    }else {
+        res.status(424).send({message: 'Subject not found'});
+    }
+}
 exports.getSubjectById = async function (req, res){
     let s = req.params.id;
-    console.log("s:",s);
     let subject = await Subject.findOne({_id:s});
-    console.log("es: ", subject)
+    let students = await Subject.findOne({ _id:s },{ _id:0, students:1 }).populate('students', '', null, { sort: { 'modificationDate': -1 } });
     if(subject) {
-        res.status(200).json(subject);
+           res.status(200).send({subject: subject, students});
     } else {
         res.status(424).send({message: 'Subject not found'});
     }
