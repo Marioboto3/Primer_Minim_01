@@ -20,7 +20,7 @@ exports.addStudent = async function (req, res){
     else{
         res.status(400).send(result);
     }
-}
+};
 exports.getStudentById = async function (req, res){
     let s = req.params.id;
     console.log("s:",s);

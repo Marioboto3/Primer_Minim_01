@@ -42,7 +42,7 @@ exports.getStudentsOfSubject = async function (req, res){
     let s = req.params.id;
     let subject = await Subject.findOne({_id:s});
     let st = await Student.find({}, {name:1});
-    let students = await Subject.findOne({ _id:s },{ _id:0, students:1 }).populate('students', '', null, { sort: { 'modificationDate': -1 } });
+    let students = await Subject.findOne({ _id:s },{ _id:0, students:1 }).populate('students');
     let decimal: number = 0;
     if(subject) {
         students.students.forEach(x => {
