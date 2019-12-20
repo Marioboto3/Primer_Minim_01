@@ -21,6 +21,15 @@ exports.addStudent = async function (req, res){
         res.status(400).send(result);
     }
 };
+exports.getByStudies = async function (req,res) {
+    let study = req.params.studyName;
+    let students = await Student.find({studies:{$elemMatch:{studies : study}}});
+    if(students){
+        return res.status(200).send(students);
+    } else {
+        res.status(204).send({message: 'No results'});
+    }
+};
 exports.getStudentById = async function (req, res){
     let s = req.params.id;
     console.log("s:",s);

@@ -8,6 +8,6 @@ router.get('/get/:id', studentScripts.getStudentById);
 router.get('/get', studentScripts.getAllStudents);
 router.post('/add', studentScripts.addStudent);
 router.get('/get/studies/telecos', studentScripts.getStudentById);
-
+router.get('/getStudies/:studyName', studentScripts.getByStudies);
 
 module.exports = router;
