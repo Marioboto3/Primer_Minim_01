@@ -13,7 +13,7 @@
     "body-parser": "^1.19.0",
     "cors": "latest",
     "errorhandler": "latest",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "mongoose": "latest",
     "typescript": "^3.6.4"
   },
